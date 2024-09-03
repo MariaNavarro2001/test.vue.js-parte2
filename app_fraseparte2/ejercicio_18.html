@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Doble clic</title>
+  <style>
+    #button {
+      background-color: purple;
+      color: white;
+      font-size: 18px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    #button:hover {
+      background-color: #6c5ce7;
+    }
+
+    #message {
+      display: none;
+      font-size: 20px;
+      color: purple;
+    }
+  </style>
+</head>
+<body>
+  <button id="button" ondblclick="handleDblClick()">Doble clic aquí</button>
+  <p id="message">¡Has hecho doble clic en el botón felicidades :D!</p>
+
+  <script>
+    let showMessage = false;
+    let messageElement = document.getElementById('message');
+
+    function handleDblClick() {
+      if (!showMessage) {
+        showMessage = true;
+        messageElement.style.display = 'block';
+        setTimeout(() => {
+          messageElement.style.display = 'none';
+          showMessage = false;
+        }, 2000); // Oculta el mensaje después de 2 segundos
+      }
+    }
+  </script>
+</body>
+</html>

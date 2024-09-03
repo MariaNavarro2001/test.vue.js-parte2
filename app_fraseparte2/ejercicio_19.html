@@ -1,0 +1,19 @@
+<div style="background-color: #ccc;">
+  <input type="text" id="miEntrada" onfocus="manejarFoco()" onblur="manejarDesenfoque()">
+  <p id="mensaje"></p>
+
+  <script>
+    let estaEnfocado = false;
+    let mensaje = "¡Estás enfocado en lo que haces :D!";
+
+    function manejarFoco() {
+      estaEnfocado = true;
+      document.getElementById("mensaje").innerHTML = mensaje;
+    }
+
+    function manejarDesenfoque() {
+      estaEnfocado = false;
+      document.getElementById("mensaje").innerHTML = "";
+    }
+  </script>
+</div>

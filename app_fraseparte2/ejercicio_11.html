@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Filtro de búsqueda</title>
+  <style>
+    /* Agrega algunos estilos básicos para que la lista se vea mejor */
+    .cuadro {
+      border: 1px solid #ccc;
+      padding: 10px;
+      background-color: #f9f9f9;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .cuadro .titulo {
+      background-color: #ff0000;
+      color: #fff;
+      padding: 10px;
+      border-bottom: 1px solid #ccc;
+    }
+    .cuadro .lista {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .cuadro .lista li {
+      padding: 10px;
+      border-bottom: 1px solid #ccc;
+    }
+    .cuadro .lista li:last-child {
+      border-bottom: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="cuadro">
+    <div class="titulo">Filtro de búsqueda</div>
+    <input type="search" id="filtro" placeholder="Buscar...">
+    <ul class="lista" id="lista">
+      <li>Elemento 1</li>
+      <li>Elemento 2</li>
+      <li>Elemento 3</li>
+      <li>Elemento 4</li>
+      <li>Elemento 5</li>
+    </ul>
+  </div>
+
+  <script>
+    // Obtiene el elemento de entrada de búsqueda y la lista
+    const filtro = document.getElementById('filtro');
+    const lista = document.getElementById('lista');
+
+    // Agrega un evento de entrada al elemento de búsqueda
+    filtro.addEventListener('input', () => {
+      // Obtiene el valor de búsqueda
+      const valorBusqueda = filtro.value.toLowerCase();
+
+      // Obtiene todos los elementos de la lista
+      const elementos = lista.getElementsByTagName('li');
+
+      // Recorre cada elemento de la lista
+      for (const elemento of elementos) {
+        // Obtiene el texto del elemento
+        const texto = elemento.textContent.toLowerCase();
+
+        // Verifica si el texto del elemento contiene el valor de búsqueda
+        if (texto.includes(valorBusqueda)) {
+          // Si lo contiene, muestra el elemento
+          elemento.style.display = 'block';
+        } else {
+          // Si no lo contiene, oculta el elemento
+          elemento.style.display = 'none';
+        }
+      }
+    });
+  </script>
+</body>
+</html>

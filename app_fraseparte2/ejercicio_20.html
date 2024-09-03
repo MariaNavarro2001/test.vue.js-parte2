@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Campo de entrada con mensaje</title>
+  <style>
+    /* Estilos para el campo de entrada y el mensaje */
+    input[type="text"] {
+      width: 50%;
+      height: 30px;
+      font-size: 18px;
+      padding: 10px;
+      border: 1px solid #ccc;
+    }
+    
+    .cuadro {
+      border: 1px solid #000; /* Agregamos un borde negro al cuadro */
+      padding: 10px; /* Agregamos un padding para separar el texto del borde */
+      background-color: #f0f0f0; /* Agregamos un fondo gris claro al cuadro */
+      display: flex; /* Agregamos un diseño flexbox para alinear el contenido */
+      justify-content: center; /* Centramos el contenido horizontalmente */
+      align-items: center; /* Centramos el contenido verticalmente */
+    }
+    
+    .mensaje {
+      font-size: 18px;
+      color: #FF69B4; /* Agregamos un color rosa para el mensaje */
+    }
+  </style>
+</head>
+<body>
+  <h1>Campo de entrada con mensaje</h1>
+  <input type="text" onblur="document.querySelector('.mensaje').textContent = 'El campo ha perdido el enfoque!'" />
+  <div class="cuadro">
+    <div class="mensaje"></div>
+  </div>
+  
+  <!-- Agregamos un botón para restablecer el mensaje -->
+  <button onclick="document.querySelector('.mensaje').textContent = ''">Restablecer</button>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cambiar color al pasar el ratón</title>
+  <style>
+    .cambiar-color {
+      width: 200px;
+      height: 100px;
+      background-color: #FFC0CB; /* Rosado */
+      color: black;
+      font-size: 24px; /* Tamaño de letra */
+      padding: 20px;
+      border: 1px solid black;
+      transition: color 0.3s ease-in-out;
+    }
+
+    .cambiar-color:hover {
+      color: #0000FF; /* Azul */
+    }
+  </style>
+</head>
+<body>
+  <div class="cambiar-color">Pasa el ratón sobre mí</div>
+</body>
+</html>

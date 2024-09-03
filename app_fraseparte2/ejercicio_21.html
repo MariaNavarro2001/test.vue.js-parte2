@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Campo de entrada en tiempo real</title>
+  <style>
+    /* Estilos opcionales para darle un poco de formato al campo de entrada y al texto en pantalla */
+    body {
+      font-family: Arial, sans-serif;
+    }
+    #campo-entrada {
+      width: 50%;
+      padding: 10px;
+      font-size: 18px;
+    }
+    #texto-en-pantalla {
+      font-size: 24px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1 id="texto-en-pantalla"></h1>
+  <input type="text" id="campo-entrada" />
+  <script>
+    const campoEntrada = document.getElementById('campo-entrada');
+    const textoEnPantalla = document.getElementById('texto-en-pantalla');
+
+    campoEntrada.addEventListener('input', () => {
+      textoEnPantalla.innerText = campoEntrada.value;
+      textoEnPantalla.style.color = 'blue'; // Agregamos esta línea para cambiar el color del texto
+    });
+  </script>
+</body>
+</html>

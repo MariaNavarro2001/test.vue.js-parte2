@@ -1,0 +1,18 @@
+<!-- Creamos un párrafo para mostrar el texto y un botón para cambiarlo -->
+<p id="texto">Texto inicial</p>
+<button id="boton">Cambiar texto</button>
+
+<!-- Agregamos el código JavaScript para cambiar el texto al hacer clic en el botón -->
+<script>
+  // Seleccionamos el párrafo y el botón
+  const texto = document.getElementById('texto');
+  const boton = document.getElementById('boton');
+
+  // Creamos una función que cambia el texto al hacer clic
+  const cambiarTexto = () => {
+    texto.textContent = 'Texto cambiado';
+  }
+
+  // Agregamos un evento de clic al botón para llamar a la función
+  boton.addEventListener('click', cambiarTexto);
+</script>

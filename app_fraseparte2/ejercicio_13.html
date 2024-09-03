@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Campo de entrada con caracter presionado</title>
+  <style>
+    /* Estilos básicos para el campo de entrada y el texto */
+    input[type="text"] {
+      padding: 10px;
+      font-size: 18px;
+    }
+    p {
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+  <input type="text" id="input-field" onkeydown="handleKeydown(event)">
+  <p id="last-key-pressed">Último caracter presionado: </p>
+
+  <script>
+    let lastKeyPressed = document.getElementById('last-key-pressed');
+
+    function handleKeydown(event) {
+      lastKeyPressed.innerText = `Último caracter presionado: ${event.key}`;
+    }
+  </script>
+</body>
+</html>

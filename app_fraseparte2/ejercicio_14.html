@@ -1,0 +1,20 @@
+<!-- Creamos un campo de entrada y un párrafo para mostrar el mensaje -->
+<input id="entrada" type="text" placeholder="Escribe algo">
+<p id="mensaje"></p>
+
+<!-- Agregamos el código JavaScript para mostrar el mensaje al presionar la tecla Enter -->
+<script>
+  // Seleccionamos el campo de entrada y el párrafo
+  const entrada = document.getElementById('entrada');
+  const mensaje = document.getElementById('mensaje');
+
+  // Creamos una función que se llama cuando se presiona la tecla Enter
+  const mostrarMensaje = (e) => {
+    if (e.key === 'Enter') {
+      mensaje.textContent = `Hola, ${entrada.value}!`;
+    }
+  }
+
+  // Agregamos un evento de keydown al campo de entrada para llamar a la función
+  entrada.addEventListener('keydown', mostrarMensaje);
+</script>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulario con Composition API</title>
+  <style>
+    .cuadro {
+      width: 300px;
+      height: 200px;
+      background-color: #F7F7F7;
+      border: 1px solid #CCCCCC;
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <div class="cuadro">
+      <form @submit.prevent="handleSubmit">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" v-model="nombre"><br><br>
+        <label for="email">Correo electrónico:</label>
+        <input type="email" id="email" v-model="email"><br><br>
+        <input type="submit" value="Enviar">
+      </form>
+      <p v-if="enviado">¡Formulario enviado con éxito!</p>
+    </div>
+  </div>
+
+  <script>
+    const { ref, onMounted } = Vue;
+
+    onMounted(() => {
+      const app = {
+        setup() {
+          const nombre = ref('');
+          const email = ref('');
+          const enviado = ref(false);
+
+          const handleSubmit = (event) => {
+            event.preventDefault();
+            // Aquí puedes agregar la lógica para enviar el formulario
+            console.log('Formulario enviado:', { nombre: nombre.value, email: email.value });
+            enviado.value = true;
+          };
+
+          return {
+            nombre,
+            email,
+            enviado,
+            handleSubmit,
+          };
+        },
+      };
+
+      Vue.createApp(app).mount('#app');
+    });
+  </script>
+</body>
+</html>
